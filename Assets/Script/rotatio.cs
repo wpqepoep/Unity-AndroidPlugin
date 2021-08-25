@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class rotatio : MonoBehaviour
 {
+    
+    public float x, y, z;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +21,10 @@ public class rotatio : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {       
         if (SystemInfo.supportsGyroscope)
             transform.rotation = GyroToUnity(Input.gyro.attitude);
+       
     }
     private Quaternion GyroToUnity(Quaternion q)
     {
